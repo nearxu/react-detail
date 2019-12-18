@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="./index1.js"></script>
+    <script>
+        // let vdom = createElement('p',null,'hello world')
+        const element = {
+            type: "div",
+            props: {
+                id: "app",
+                children: [
+                { type: "h1", props: { value: "Yolkjs"}},
+                { type: "p", props: { value: "react dom"}},
+                { type: "a", props: { href: "https://jd.com", value: "shop"}},
+                ]
+            }
+        }
+        let vdom = createElement(element.type,null,element.props)
+        // let domArr = Array.from({length:10},() => vdom);
+        // let bigDom = createElement('div',null,{type:'div',props:null,children:domArr});
+        let root = document.getElementById('root')
+        render(vdom,root)
+    </script>
+</body>
+</html>
